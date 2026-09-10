@@ -67,3 +67,43 @@ git cherry-pick <commit-hash>
 لو التعديلات متعارضه مع الكود الموجود في Brach الحالي
 
 #Git #GitHub #SoftwareDevelopment #Programming #LearningInPublic #SimulationAcademy
+
+---
+
+## Post 3: Git Merge vs Git Rebase
+
+- **Post Link:** https://lnkd.in/p/eMWSnptj
+- **Date Published:** 2026-09-10
+
+### Post Content:
+
+من أكتر الحاجات اللي بدأت أفهم أهميتها وأنا بتعلم Git هي إن نفس النتيجة ممكن نوصل لها بأكتر من طريقة، لكن كل طريقة بتأثر على شكل الـ Git History.
+
+Git Merge ولا Git Rebase؟
+خلينا نبسط الفرق 
+
+Git Merge
+الـ Merge بيجمع التغييرات من Branch مع Branch تاني، وبيحافظ على الـ History زي ما هو.
+مثلاً:
+`main: A — B — C`
+`feature: B — D — E`
+بعد الـ Merge ممكن يكون عندنا:
+`A — B — C — M`
+والـ Merge Commit بيوضح إن Branch تاني تم دمجه.
+
+Git Rebase
+الـ Rebase بياخد الـ Commits الموجودة في الـ Feature Branch ويعيد تطبيقها فوق آخر Commit في الـ Main Branch.
+يعني بدل ما يكون عندي History فيه تفرعات، ممكن يبقى:
+`A — B — C — D' — E'`
+وده بيخلي الـ History أكثر خطية ونظافة.
+
+طيب أستخدم مين؟
+مش معنى إن الـ Rebase بيخلي الـ History أنظف إنه دايمًا أفضل.
+استخدم Merge لما تكون عايز تحافظ على الـ History الحقيقي للتفرعات.
+استخدم Rebase لما تكون عايز تنظف الـ History قبل الدمج أو تحدّث الـ Feature Branch على آخر نسخة من main.
+
+وأهم قاعدة:
+Avoid rebasing commits that have already been shared with other people.
+لأن الـ Rebase بيعيد كتابة الـ Commit History، وده ممكن يسبب مشاكل لزملائك لو الـ Branch مش شغال عليه شخص واحد.
+
+#Git #GitHub #SoftwareDevelopment #Programming #VersionControl #LearningInPublic #SimulationAcademy
